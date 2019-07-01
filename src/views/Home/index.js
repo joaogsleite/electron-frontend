@@ -15,9 +15,9 @@ export default class Home extends PureComponent {
   }
   render(){
     const { msg } = this.state
-    return <div>
+    return <>
       <Title>Message</Title>
       <p>{msg}</p>
-    </div>
+    </>
   }
 }

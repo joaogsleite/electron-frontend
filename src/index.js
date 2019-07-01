@@ -15,7 +15,7 @@ import Root from './views/Root'
 // multi lang
 import 'config/locales'
 
-import 'theme/index.scss'
+import 'theme/index.css'
 
 const initialState = {}
 initContext(initialState, reducer, [logger])
