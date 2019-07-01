@@ -1,6 +1,9 @@
 
 # Electron frontend
 
+Electron app frontend boilerplate.<br>
+This project should be used with [electron-backend](https://github.com/joaogsleite/electron-backend) project.
+
 
 ## Available Scripts
 
