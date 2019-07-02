@@ -26,3 +26,9 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.<br>
 
 > After building this project, the `build/` folder should be copied to the electron backend `public/` folder
+
+
+## Debug
+
+This project includes debug configuration for vscode.<br>
+The electron-backend project must also be opened in debug mode for the frontend debug to work.
