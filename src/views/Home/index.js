@@ -1,19 +1,25 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 import Title from 'components/Title'
 
 import { hello } from 'services/api'
+import useApi from 'utils/useApi'
 
 export default function Home() {
 
-  const [msg, setMsg] = useState()
-  
-  useEffect(() => {
-    hello.sayHello().then(setMsg)
-  }, [])
+  const [api, setApi] = useState(hello.sayHello)
 
+  const [msg] = useApi(api)  
+
+  const handleClick = () => {
+    setApi(() => hello.sayHello('222'))
+  }
+  
   return <>
     <Title>Message</Title>
-    <p>{msg}</p>
+    {msg
+      ? <p onClick={handleClick}>{msg}</p>
+      : <p>Loading...</p>
+    }
   </>
 }
