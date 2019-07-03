@@ -3,23 +3,27 @@ import React, { useState } from 'react'
 import Title from 'components/Title'
 
 import { hello } from 'services/api'
-import useApi from 'utils/useApi'
+import { useApi, useDebounce } from 'utils/hooks'
+import Input from 'components/Input';
 
 export default function Home() {
 
-  const [api, setApi] = useState(hello.sayHello)
+  const [name, setName] = useState('Frontend')
 
-  const [msg] = useApi(api)  
+  const debouncedName = useDebounce(name, 500)
+  const [msg, loading] = useApi(hello.sayHello, debouncedName)
 
-  const handleClick = () => {
-    setApi(() => hello.sayHello('222'))
-  }
-  
   return <>
     <Title>Message</Title>
-    {msg
-      ? <p onClick={handleClick}>{msg}</p>
-      : <p>Loading...</p>
+
+    <Input value={name} onChange={setName} />
+
+    <br /><br />
+
+    <p>{msg}</p>
+
+    {loading &&
+      <p>Loading...</p>
     }
   </>
 }

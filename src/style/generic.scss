@@ -3,4 +3,10 @@
 
 @import './variables';
 @import './mixins';
+
+// generic elements
 @import '~bulma/sass/base/generic';
+
+// form elements
+@import '~bulma/sass/utilities/controls';
+@import '~bulma/sass/form/shared'

@@ -1,0 +1,7 @@
+
+@import '~style/generic';
+@import '~bulma/sass/form/input-textarea';
+
+.input {
+  @extend .input;
+}
