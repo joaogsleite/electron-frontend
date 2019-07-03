@@ -1,0 +1,7 @@
+
+@import '~style/generic';
+@import '~bulma/sass/elements/container';
+
+.container {
+  @extend .container;
+}

@@ -1,8 +1,8 @@
 
-import { sendAsync } from '../helpers'
+import { send } from '../helpers'
 
 export const sayHello = async (name = 'Frontend') => {
-  return await sendAsync('/hello/say', name)
+  return await send('/hello/say', name)
 }
 
 
